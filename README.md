@@ -165,7 +165,7 @@ v1.1 adds pre-emptive multitasking. In essence, a SysTick exception is raised by
 
 The SysTick timer uses a 1μs pulse as a clock enable
 
-Further details about how Piccolo OS uses the SysTick exception including details of interrupt priority levels and locks, please see [Notes on Pre-emptive Scheduling]()
+Further details about how Piccolo OS uses the SysTick exception including details of interrupt priority levels and locks, please see [Notes on Pre-emptive Scheduling](https://github.com/garyexplains/piccolo_os_v1.1/blob/main/Preemption_Notes.md)
 
 ## Contributing
 Piccolo OS is a learning tool.
