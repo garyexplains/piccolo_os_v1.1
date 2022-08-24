@@ -116,6 +116,13 @@ void __piccolo_task_init(void) {
 void piccolo_init() {
   piccolo_ctx.task_count = 0;
   stdio_init_all();
+  /*
+   * set interrupt priority for SVC, PENDSV and Systick to 'all bits on'
+   * for LOWEST interrupt priority. We do not want ANY of them to preempt
+   * any other irq or each other.
+   */
+  hw_set_bits((io_rw_32 *)(PPB_BASE + M0PLUS_SHPR2_OFFSET), M0PLUS_SHPR2_BITS);
+  hw_set_bits((io_rw_32 *)(PPB_BASE + M0PLUS_SHPR3_OFFSET), M0PLUS_SHPR3_BITS);
 }
 
 void piccolo_systick_config(unsigned int n) {
@@ -148,11 +155,10 @@ void __piccolo_systick_config(unsigned int n) {
 void piccolo_start() {
   piccolo_ctx.current_task = 0;
 
-  __piccolo_systick_config(PICCOLO_OS_TIME_SLICE);
-
   __piccolo_task_init();
 
   while (1) {
+    __piccolo_systick_config(PICCOLO_OS_TIME_SLICE);
     piccolo_ctx.the_tasks[piccolo_ctx.current_task] =
         __piccolo_pre_switch(piccolo_ctx.the_tasks[piccolo_ctx.current_task]);
 
