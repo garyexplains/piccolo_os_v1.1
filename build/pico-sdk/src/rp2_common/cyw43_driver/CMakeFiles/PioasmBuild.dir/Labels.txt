@@ -1,0 +1,13 @@
+# Target labels
+ PioasmBuild
+# Source files and their labels
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild-complete.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule
+/home/gary/pico/piccolo_os_v1.1/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule
