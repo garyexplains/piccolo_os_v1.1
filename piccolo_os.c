@@ -125,18 +125,6 @@ void piccolo_init() {
   hw_set_bits((io_rw_32 *)(PPB_BASE + M0PLUS_SHPR3_OFFSET), M0PLUS_SHPR3_BITS);
 }
 
-void piccolo_systick_config(unsigned int n) {
-	/* SysTick Memory Map */
-	#define SYSTICK_CTRL	(volatile unsigned int *)0xe000e010
-	#define SYSTICK_LOAD	(volatile unsigned int *)0xe000e014
-	#define SYSTICK_VAL	(volatile unsigned int *)0xe000e018
-
-	/* SysTick configuration */
-	*SYSTICK_LOAD = (n) - 1UL;
-	*SYSTICK_VAL = 0;
-	*SYSTICK_CTRL = 0x07;
-}
-
 void __piccolo_systick_config(unsigned int n) {
         /* Stop systick and cancel it if it is pending */
         systick_hw->csr = 0;    // Disable timer and IRQ 
@@ -145,7 +133,6 @@ void __piccolo_systick_config(unsigned int n) {
 
         // clear the systick exception pending bit if it got set
         hw_set_bits  ((io_rw_32 *)(PPB_BASE + M0PLUS_ICSR_OFFSET),M0PLUS_ICSR_PENDSTCLR_BITS);
-
 
         systick_hw->rvr = (n) - 1UL;    // set the reload value
         systick_hw->cvr = 0;    // clear counter to force reload
