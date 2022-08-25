@@ -32,7 +32,7 @@ the best place to start.](https://datasheets.raspberrypi.org/pico/getting-starte
 
 You need to have PICO_SDK_PATH defined, e.g. `export PICO_SDK_PATH=/home/pi/pico/pico-sdk/`
 
-Clone the code from the repository. Change directory into `build` and run `cmake -DCMAKE_BUILD_TYPE=Debug ..` (for a debug build) or `cmake ..` (for a release build).
+Clone the code from the repository. Create the `build` directory (`mkdir build`), if you don't have one. Change directory into `build` and run `cmake -DCMAKE_BUILD_TYPE=Debug ..` (for a debug build) or `cmake ..` (for a release build).
 
 Run `make`
 
