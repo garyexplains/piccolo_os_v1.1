@@ -6,6 +6,8 @@ This is v1.1 of Piccolo OS. v1.1 takes the basic concepts of v1.0 (which used co
 
 To understand v1.1 it is first best to [understand v1.0](https://github.com/garyexplains/piccolo_os_v1/blob/main/README.md)
 
+You might also want to watch [the Piccolo OS v1.1 video on Gary Explains](https://youtu.be/g1VFJHjLVMU)
+
 ## Credits
 Many thanks to [Keith Standiford](https://github.com/KStandiford) for his pre-emptive multitasking code, insights, and encouragement.
 
