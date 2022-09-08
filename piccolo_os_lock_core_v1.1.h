@@ -22,6 +22,8 @@
 
 /* force mutex for malloc even if multicore is not loaded */
 #define PICO_USE_MALLOC_MUTEX 1
+/* Protect divider from pre-emption */
+#define PICO_DIVIDER_DISABLE_INTERRUPTS true
 
 
 

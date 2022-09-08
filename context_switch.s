@@ -13,11 +13,14 @@
 .thumb
 .syntax unified
 
+
 .type isr_svcall, %function
 .global isr_svcall
 .type isr_systick, %function
 .global isr_systick
+.thumb_func
 isr_svcall:
+.thumb_func
 isr_systick:
 	mrs r0, psp
 
@@ -70,6 +73,8 @@ isr_systick:
     pop {pc}
 
 .global __piccolo_pre_switch
+.type __piccolo_pre_switch,%function
+.thumb_func
 __piccolo_pre_switch:
 	/* save kernel state */
     /*
@@ -125,6 +130,8 @@ __piccolo_pre_switch:
 	bx lr
 
 .global __piccolo_task_init_stack
+.type __piccolo_task_init_stack,%function
+.thumb_func
 __piccolo_task_init_stack:
 	/* save kernel state */
     /*
@@ -160,8 +167,12 @@ __piccolo_task_init_stack:
 	/* same as bl piccolo_syscall, if the code wasn't below */
 
 .global piccolo_yield
+.type piccolo_yield,%function
 .global piccolo_syscall
+.type piccolo_syscall,%function
+.thumb_func
 piccolo_yield:
+.thumb_func
 piccolo_syscall:
     nop
 	svc 0

@@ -6,9 +6,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "pico/stdlib.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "pico/stdlib.h"
 
 #include "piccolo_os.h"
 
