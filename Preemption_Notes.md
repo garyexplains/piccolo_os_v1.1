@@ -35,13 +35,10 @@ while the scheduler is running (after the SVC)! We did at least make sure that n
 will preempt the other when we set *both* their priorities to the lowest level.
 - If the timer gets in before the SVC instruction executes, then the task misses the boat and will skip
 a turn when it resumes and executes the SVC instruction. (So sad!)
-- If both the SVC and systick happen at the same time then SVC wins with a lower exception number and
-the systick interrupt will be pending. This is the same as systick expiring while the scheduler is running 
-because of an SVC, and will be discussed below.
-- I think it's unlikely but it may be possible for the processor to decide to take the exception for the
-systick interrupt in just such a way that the SVC still gets executed and the SVC interrupt ends up pending while
-the systick one is processed. The would cause two context switches in a row so that the task after the preempted 
-one would skip a turn. (So sorry!) I don't think it can happen, and it is ugly to fix, so I propose to ignore it.
+- If both the SVC and Systick happen at the same time then SVC wins with a lower exception number and
+the Systick interrupt will be pending. This is the same as Systick expiring while the scheduler is running 
+because of an SVC, and will be discussed below. (Note that *at the same time* here means that Systick fires
+during the execution of the SVC instruction.)
 - The systick timer can expire while the scheduler is running due to an SVC instruction. The scheduler is the
 exception handler and will not be preempted by the systick interrupt because they are at the same
 priority level. But the systick exception will be pending and will happen as soon as the scheduler switches to 
